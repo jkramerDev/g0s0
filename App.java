@@ -32,15 +32,23 @@ public class App {
 		
 		while(true) {
 			
+			System.out.println("Press 'H' for Help");
+
+			
 			System.out.println("U can go E/W/S/N - choose");
 
 			String nextMove = s.nextLine();
 			
-			player1.move(nextMove);
+			if(nextMove.equalsIgnoreCase("H"))
+				Help.printMap();
+			else
+				player1.move(nextMove);
 			
 			System.out.println("u are here: " + player1.getCurrentLocation());
 			System.out.println("****");
 
+			
+			
 			
 		}
 		
