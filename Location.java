@@ -14,12 +14,17 @@
 public class Location {
 	
 	private String currentLocation;
+	private static final String FRONT_DOOR = "Front Door";
+	private static final String KITCHEN = "Kitchen";
+	private static final String ATTIC = "Attic";
+	private static final String E = "E";
+	private static final String N = "N";	
 	
 	/**
 	 * initialize location at Front Door in your constructor
 	 */
 	public  Location() {
-		currentLocation = "Front Door";
+		currentLocation = FRONT_DOOR;
 	}
 	
 	/**
@@ -29,41 +34,76 @@ public class Location {
 	public String getLocation() {
 		return currentLocation;
 	}
-	
+ 	
 	
 	/**
-	 * move() is a key method.  1st cut it's going to be big to handle different conditions.  
-	 * eventually we'll break that logic out to smaller methods
-	 * 
+	 * break this down to use some helper methods..   moving parts?  direction & current location..
 	 * @param direction
 	 */
 	
-	
 	public void move(String direction) {
 		
-		if(direction.equalsIgnoreCase("E")){
-			
-			if(currentLocation.equals("Front Door")) 
-				currentLocation = "Kitchen";
-			
-			else if(currentLocation.equals("Kitchen")) 
-				currentLocation = "Parlor";
-			
-			else if(currentLocation.equals("Attic"))
-				System.out.println("Cant go East in attic..");
 		
-		} 
+		switch (currentLocation) {
+			case FRONT_DOOR:
+				handleFrontDoorMove(direction);
+				break;
+				
+			case KITCHEN:
+				handleKitchenMove(direction);
+				break;
 
-		
-		else if(direction.equalsIgnoreCase("W")){
-			System.out.println("where do u go if you go west from current room ");
-		
-		} 
-
-		//... etc..
-		
-		
+			//.. other rooms.
+			
+			default:
+				System.out.println("Cant get there from here..");
 	
+				
+		}				
+				 
+		
 	}
 
+	private void handleFrontDoorMove(String direction) {
+		switch (direction) {
+			case E:
+				currentLocation = KITCHEN;
+				break;
+				
+			case N:
+				currentLocation = ATTIC;
+							 
+				break;
+	
+			//.. other directions..
+			
+			default:
+				System.out.println("Cant get there from here..");
+
+			
+		}
+		
+	}
+	private void handleKitchenMove(String direction) {
+		switch (direction) {
+			case "E":
+				currentLocation = "Parlor";
+				break;
+				
+			case "N":
+				System.out.println("Cant get there from here..");
+							 
+				break;
+	
+			//.. other directions..
+			
+			default:
+				System.out.println("Cant get there from here..");
+
+			
+		}
+		
+	}
+	
+	
 }
