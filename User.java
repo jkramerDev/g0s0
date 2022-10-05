@@ -28,7 +28,26 @@ public class User {
 	}
 	
 	public void move(String direction) {
+		
+		//check for scoring opportunity..
+		checkForScoringOp();
+		
 		location.move(direction);
+	}
+	
+	/**
+	 * scoring op: if based on direction && current location
+	 * there is a scorable item...   do stuff...    
+	 * 
+	 * i.e., you went west from parlor, 
+	 * maybe you find trap door do you want to look inside.
+	 * if yes, you find an item.  do you pick it up...  etc
+	 * 
+	 * @return
+	 */
+	
+	public void checkForScoringOp() {
+		
 	}
 	
 	public String getCurrentLocation() {

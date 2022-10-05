@@ -29,7 +29,7 @@ public class App {
 		
 		player1.setName(name);
 
-		
+		//while user score < 50
 		while(true) {
 			
 			System.out.println("Press 'H' for Help");

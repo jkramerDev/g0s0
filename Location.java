@@ -57,7 +57,7 @@ public class Location {
 			
 			default:
 				System.out.println("Cant get there from here..");
-	
+				break;
 				
 		}				
 				 
@@ -79,7 +79,7 @@ public class Location {
 			
 			default:
 				System.out.println("Cant get there from here..");
-
+				break;
 			
 		}
 		
