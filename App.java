@@ -46,7 +46,9 @@ public class App {
 			
 			System.out.println("u are here: " + player1.getCurrentLocation());
 			System.out.println("****");
-
+			System.out.println("u have this many points: " + player1.getPoints());
+			System.out.println("****");
+			
 			
 			
 			

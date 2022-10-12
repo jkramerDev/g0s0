@@ -4,7 +4,7 @@ import java.util.Map;
 public class ScorableItem {
 
 	private Map<String, Integer> items;
-	private int score;
+ 
 	
 	//ctor
 	public ScorableItem() {
@@ -30,8 +30,10 @@ public class ScorableItem {
 	 */
 	
 	public Integer getItem(String key) {
-			
-		return -1;
+		
+		//code defensively here
+		
+		return items.get(key);
 	}
 	
 	

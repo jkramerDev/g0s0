@@ -1,3 +1,4 @@
+import java.util.List;
 
 /**
  * 
@@ -22,15 +23,22 @@ public class User {
 	
 	private String name;
 	private Location location;
+	
+	private ScorableItem scorableItem;
+	private List<String> items;  
+	private int points;
+	
+	
 
 	public User() {
 		location = new Location();
+		scorableItem = new ScorableItem();
 	}
 	
 	public void move(String direction) {
 		
 		//check for scoring opportunity..
-		checkForScoringOp();
+		checkForScoringOp(direction);
 		
 		location.move(direction);
 	}
@@ -46,7 +54,18 @@ public class User {
 	 * @return
 	 */
 	
-	public void checkForScoringOp() {
+	public void checkForScoringOp(String direction) {
+		
+		if(location.getLocation().equals("Kitchen")) {
+			
+			if ( direction.equals("E"))
+			{
+				System.out.println("you see a jug of water would you like to pick it up? ");
+				//do scanner thing y/n
+				int value = scorableItem.getItem("water");
+				points = points + value;
+			}
+		}
 		
 	}
 	
@@ -63,6 +82,8 @@ public class User {
 		this.name = name;
 	}
 	
-	
+	public int getPoints() {
+		return points;
+	}
  
 }
