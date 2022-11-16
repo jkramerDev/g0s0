@@ -1,3 +1,4 @@
+package app;
 
 public class Help {
 	// Help menu option that prints out the map
